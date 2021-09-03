@@ -3,12 +3,7 @@ import HeaderComponent from '../components/HeaderComponent';
 import DisplayComponent from '../components/DisplayComponent';
 import FooterComponent from '../components/FooterComponent';
 
-const CurrencyConverterContainer = ({}) => {
-    
-    
-    
-    
-    
+const CurrencyConverterContainer = () => {
     return (
         <>
             <HeaderComponent/>

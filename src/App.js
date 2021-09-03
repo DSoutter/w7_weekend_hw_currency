@@ -3,9 +3,9 @@ import CurrencyConverterContainer from './containers/CurrencyConverterContainer'
 
 function App() {
   return (
-   <>
+   <div className="App">
   <CurrencyConverterContainer/>
-   </>
+   </div>
   );
 }
 

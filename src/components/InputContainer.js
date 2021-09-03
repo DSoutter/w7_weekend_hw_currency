@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputContainer = ({}) => {
+const InputContainer = ({currencies, onSelectedCurrency}) => {
 
     return (
         <h3>I'm the input container</h3>
