@@ -5,7 +5,7 @@ const InputContainer = ({currencies, onSelectedCurrency}) => {
     const handleChange = function(event) {
         const chosenCurrency = currencies[event.target.value];
         onSelectedCurrency(chosenCurrency);
-        // console.log(currencies[50])
+        // console.log(currencies[50][0])
     }
 
     const currencyOptions = currencies.map((currency, index) => {
@@ -15,12 +15,11 @@ const InputContainer = ({currencies, onSelectedCurrency}) => {
     return (
         <>
             <h3>I'm the input container</h3>
-            <select defaultValue="Pound sterling" onChange={handleChange}>
-                <option value="Pound sterling" selected>{currencies[50]}</option>
+            <select onChange={handleChange}>
                 {currencyOptions}
             </select>
         </>
     )
 }
-
+ 
 export default InputContainer

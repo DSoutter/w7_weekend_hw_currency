@@ -5,7 +5,7 @@ import ResultsContainer from './ResultsContainer';
 
 const DisplayComponent = ({}) => {
     const [currencies, setCurrencies] = useState([])
-    const [selectedCurrency, setSelectedCurrency] = useState('Pound sterling')
+    const [selectedCurrency, setSelectedCurrency] = useState(['gbp','Pound Sterling'])
 
 
     
@@ -13,7 +13,7 @@ const DisplayComponent = ({}) => {
         getCurrencies();
         console.log(selectedCurrency)
 
-    },[selectedCurrency])
+    },[])
  
     const getCurrencies = function() {
         fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json")
@@ -23,6 +23,7 @@ const DisplayComponent = ({}) => {
 
     const onSelectedCurrency = function(currency){
         setSelectedCurrency(currency)
+        console.log(currency)
     }
  
     return (
