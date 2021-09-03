@@ -15,7 +15,8 @@ const InputContainer = ({currencies, onSelectedCurrency}) => {
     return (
         <>
             <h3>I'm the input container</h3>
-            <select onChange={handleChange}>
+            <select defaultValue={['gbp','Pound sterling']} onChange={handleChange}>
+                <option value={['gbp','Pound sterling']} selected>Choose a currency from below</option>
                 {currencyOptions}
             </select>
         </>
