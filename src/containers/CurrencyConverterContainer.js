@@ -3,7 +3,7 @@ import HeaderComponent from '../components/HeaderComponent';
 import DisplayComponent from '../components/DisplayComponent';
 
 
-const CurrencyConverterContainer = () => {
+const CurrencyConverterContainer = ({}) => {
     
     
     
