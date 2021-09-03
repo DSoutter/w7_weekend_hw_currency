@@ -11,14 +11,14 @@ const DisplayComponent = ({}) => {
     
     useEffect(() => {
         getCurrencies();
-        console.log(currencies[0])
+        console.log(selectedCurrency)
 
-    }, [])
-
+    },[selectedCurrency])
+ 
     const getCurrencies = function() {
         fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json")
         .then(response => response.json())
-        .then(currencies => setCurrencies(Object.values(currencies)))
+        .then(currencies => setCurrencies(Object.entries(currencies)))
     }
 
     const onSelectedCurrency = function(currency){
