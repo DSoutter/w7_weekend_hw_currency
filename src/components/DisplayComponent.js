@@ -15,7 +15,6 @@ const DisplayComponent = ({}) => {
     useEffect(() => {
         getCurrencies();
         getConversions();
-
     },[])
  
     useEffect(() => {

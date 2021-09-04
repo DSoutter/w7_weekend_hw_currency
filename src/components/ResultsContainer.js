@@ -1,14 +1,15 @@
 import React from 'react';
 
 
-const ResultsContainer = ({conversions, selectedCurrency, selectedCurrency2}) => {
+const ResultsContainer = ({conversions, selectedCurrency, selectedCurrency2, amountToConvert}) => {
 
+    let newCurrencyAmount = (conversions[selectedCurrency2[0]]) * (amountToConvert) 
     
     return (
-        <div>
-            <h4>I'm the ResultsContainer</h4>
-            
-            <p>{selectedCurrency[1]} is equivalent to {conversions[selectedCurrency2[0]]} {selectedCurrency2[1]} </p>
+        <div className="resultsContainer">
+            <p>{amountToConvert} {selectedCurrency[0]}</p>
+            <p>is equivalent to </p>
+            <p>{newCurrencyAmount} {selectedCurrency2[0]}</p>
         </div>  
     )
 
