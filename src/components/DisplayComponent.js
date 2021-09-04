@@ -8,16 +8,20 @@ const DisplayComponent = ({}) => {
     const [selectedCurrency, setSelectedCurrency] = useState(['gbp','Pound Sterling'])
     const [selectedCurrency2, setSelectedCurrency2] = useState(['gbp','Pound Sterling'])
     const [conversions, setConversions] = useState(1)
+    const [amountToConvert, setAmountToConvert] = useState(1)
 
 
     
     useEffect(() => {
         getCurrencies();
         getConversions();
-        console.log(conversions)
 
     },[])
  
+    useEffect(() => {
+        getConversions();
+    }, [selectedCurrency, selectedCurrency2] )
+    
     const getCurrencies = function() {
         fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json")
         .then(response => response.json())
@@ -30,10 +34,12 @@ const DisplayComponent = ({}) => {
         .then(conversion => setConversions(conversion[selectedCurrency[0]]))
     }
 
+    const onSelectedAmountToConvert = function(amount) {
+        setAmountToConvert(amount)
+    }
+
     const onSelectedCurrency = function(currency){
         setSelectedCurrency(currency)
-        console.log(conversions)
-        // console.log(conversions[currency[0]])
     }
 
     const onSelectedCurrency2 = function(currency){
@@ -43,8 +49,8 @@ const DisplayComponent = ({}) => {
     return (
         <>
             <h2>I'm the display</h2>
-            <InputContainer currencies={currencies} onSelectedCurrency={onSelectedCurrency} onSelectedCurrency2={onSelectedCurrency2}/>
-            <ResultsContainer conversions={conversions} selectedCurrency={selectedCurrency}  selectedCurrency2={selectedCurrency2}/>
+            <InputContainer currencies={currencies} onSelectedCurrency={onSelectedCurrency} onSelectedCurrency2={onSelectedCurrency2} onSelectedAmountToConvert={onSelectedAmountToConvert}/>
+            <ResultsContainer conversions={conversions} selectedCurrency={selectedCurrency}  selectedCurrency2={selectedCurrency2} amountToConvert={amountToConvert}/>
         </>
     )
 }
