@@ -1,10 +1,13 @@
 import React from 'react';
 
 
-const ResultsContainer = ({}) => {
+const ResultsContainer = ({selectedCurrency, conversions}) => {
 
     return (
-        <h4>I'm the ResultsContainer</h4>
+        <div>
+            <h4>I'm the ResultsContainer</h4>
+            <p>{selectedCurrency[1]} and {conversions[selectedCurrency[0]]}</p>
+        </div>  
     )
 
 }

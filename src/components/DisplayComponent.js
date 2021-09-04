@@ -13,7 +13,7 @@ const DisplayComponent = ({}) => {
     useEffect(() => {
         getCurrencies();
         getConversions();
-        // console.log(selectedCurrency)
+        console.log(selectedCurrency)
 
     },[])
  
@@ -26,13 +26,14 @@ const DisplayComponent = ({}) => {
     const getConversions = function() {
         fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/gbp.json")
         .then(response => response.json())
-        .then(conversions => setConversions(conversions.gbp))
+        .then(conversion => setConversions(conversion.gbp))
     }
 
     const onSelectedCurrency = function(currency){
         setSelectedCurrency(currency)
-        console.log(currency)
-        console.log(conversions[currency[0]])
+        // console.log(currency)
+        // console.log(conversions[currency[0]])
+
 
     }
   
@@ -40,7 +41,7 @@ const DisplayComponent = ({}) => {
         <>
             <h2>I'm the display</h2>
             <InputContainer currencies={currencies} onSelectedCurrency={onSelectedCurrency}/>
-            <ResultsContainer/>
+            <ResultsContainer selectedCurrency={selectedCurrency} conversions={conversions}/>
         </>
     )
 }
