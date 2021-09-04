@@ -26,7 +26,7 @@ const InputContainer = ({currencies, onSelectedCurrency, onSelectedCurrency2, on
     
 
     return (
-        <>
+        <div className='inputContainer'>
             <label>Choose the first currency: </label>
             <select  onChange={handleChange}>
                 <option disabled defaultValue={['gbp','Pound sterling']} selected>Choose a currency (Pound Sterling is default)</option>
@@ -42,7 +42,7 @@ const InputContainer = ({currencies, onSelectedCurrency, onSelectedCurrency2, on
             <br></br>
             <label for='amountToChange'>Input Amount to Convert Here: </label>
             <input type='number' defaultValue='1' min='1' id='amountToConvert'  onChange={handleChange3}></input>
-        </>
+        </div>
     )
 }
  

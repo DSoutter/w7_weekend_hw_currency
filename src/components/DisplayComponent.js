@@ -47,7 +47,6 @@ const DisplayComponent = ({}) => {
   
     return (
         <>
-            <h2>I'm the display</h2>
             <InputContainer currencies={currencies} onSelectedCurrency={onSelectedCurrency} onSelectedCurrency2={onSelectedCurrency2} onSelectedAmountToConvert={onSelectedAmountToConvert}/>
             <ResultsContainer conversions={conversions} selectedCurrency={selectedCurrency}  selectedCurrency2={selectedCurrency2} amountToConvert={amountToConvert}/>
         </>

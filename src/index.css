@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.appHeader {
+  background-color: rgb(200, 200, 200);
+  color: white;
+  padding: 50px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.inputContainer > * {
+  justify-content: space-between;
+}
+
+
+.resultsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(200, 200, 200);
+  margin: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.resultsContainer > * {
+  text-align: center;
+
+}
+
+.appFooter {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: -20px;
+  background-color: rgba(200, 200, 200) ;
+  color: white;
+  text-align: center;
+
+
+}
+

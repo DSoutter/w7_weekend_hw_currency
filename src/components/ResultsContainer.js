@@ -8,7 +8,7 @@ const ResultsContainer = ({conversions, selectedCurrency, selectedCurrency2, amo
     return (
         <div className="resultsContainer">
             <p>{amountToConvert} {selectedCurrency[0]}</p>
-            <p>is equivalent to </p>
+            <p>=</p>
             <p>{newCurrencyAmount} {selectedCurrency2[0]}</p>
         </div>  
     )
